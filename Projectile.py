@@ -11,16 +11,16 @@ a=float(input("Enter the angle of projection (in degrees): "))
 #Converting angle to radians
 a=math.radians(a)
 
-def pm_e(m,n): #projectile motion elements
+def pm_e(m,n,h2): #projectile motion elements
 
     g=9.81
     vx=m*np.cos(n)
     vy=m*np.sin(n)
 
     t=(vy)/g
-    T=t+(math.sqrt((vy**2)+2*g*h))
+    T=(2*t)+((math.sqrt((vy**2)+2*g*h2)-vy)/g) 
     return vx,vy,t,T,g
-(vx,vy,t,T,g)=pm_e(vi,a)
+(vx,vy,t,T,g)=pm_e(vi,a,h)
 
 def rp(a,b,c,d,a1,v1,g1,h1):
     r=float(a*d)
@@ -28,11 +28,11 @@ def rp(a,b,c,d,a1,v1,g1,h1):
     y1=(x*np.tan(a1))-((0.5*(g1)*(x**2))/((v1**2)*((np.cos(a1))**2)))
     y=y1+h1 
 
-    l=(v1**2)/(2*g1)
+    l=(b**2)/(2*g1)
 
     plt.plot(x,y)
-    plt.xlim(0,r)
-    plt.ylim(0,(h1+l))
+    plt.xlim(0,r+10)
+    plt.ylim(0,(h1+l+10))
     plt.grid(True)
     plt.savefig("boom.pdf")
     print("The range of the projectile is:",r)
