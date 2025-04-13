@@ -36,7 +36,8 @@ def rp(a,b,c,d,a1,v1,g1,h1):
     plt.grid(True)
     plt.savefig("boom.pdf")
     print("The range of the projectile is:",r)
-
+    print("The H-max of the projectile from ground is:",h1+l)
+    print("The Time of Flight is:",d)
 rp(vx,vy,t,T,a,vi,g,h)
 
 
