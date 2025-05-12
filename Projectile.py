@@ -1,4 +1,5 @@
 #Taking input from user for the initial velocity and angle of projection
+
 import math 
 import matplotlib.pyplot as plt
 import numpy as np
